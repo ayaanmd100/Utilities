@@ -9,4 +9,4 @@ po.ChildAdded:connect(function(a)
         until false
     end)
 
-print("Loaded Anti-Disconnect by ayaanmd100")
+print("Loaded Anti-Disconnect")
