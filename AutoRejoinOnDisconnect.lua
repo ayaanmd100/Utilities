@@ -1,12 +1,21 @@
-repeat wait() until game.CoreGui:FindFirstChild('RobloxPromptGui')
+repeat wait() until game.CoreGui.RobloxPromptGui
 
-local lp,po,ts = game:GetService('Players').LocalPlayer,game.CoreGui.RobloxPromptGui.promptOverlay,game:GetService('TeleportService')
+local promptOverlay = game:WaitForChild("CoreGui"):WaitForChild("RobloxPromptGui").promptOverlay
+local TS = game:GetService("TeleportService")
 
-po.ChildAdded:connect(function(a)
-        repeat
-            ts:Teleport(game.PlaceId)
-            wait(2)
-        until false
-    end)
+promptOverlay.ChildAdded:connect(function()
+    repeat
+    TS:Teleport(game.PlaceId)
+    task.wait(2)    
+    until false
+end)
 
-print("Loaded Anti-Disconnect")
+
+local info = {
+Title = "Loaded";
+Text = "Load Anti-Disconnect Sucessfully";
+Duration = 10
+}
+
+
+game.StarterGui:SetCore("SendNotification", info)
