@@ -1,0 +1,41 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Utilities v0.1", "Ocean")
+
+
+
+
+-- MAIN
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Infinite Yield")
+------------------------------------------------------------------------------------
+Section:NewButton("Infinite Yield", "Loads Infinite Yield", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() 
+        local info = {
+            Title = "Loaded";
+            Text = "Loaded Infinite Yield";
+            Duration = 10
+            }
+            
+            
+            game.StarterGui:SetCore("SendNotification", info)
+    end)
+---------------------------------------------------------------------------
+local Section2 = Tab.NewSection("Utilities")
+
+Section2:NewButton("Rejoin Game", "Rejoins the game!", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ayaanmd100/Utilities/main/Rejoin.lua"))()
+
+local info2 = {
+    Title = "Rejoining";
+    Text = "Rejoining The Game....";
+    Duration = 10
+    }
+    game.StarterGui:SetCore("SendNotification", info2)
+
+    
+end)
+----------------------------------------------
+Section2:NewButton("Anti-Disconnect", "Auto-Rejoin when the script detects a disconnect prompt in CoreGui.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ayaanmd100/Utilities/main/AutoRejoinOnDisconnect.lua"))()
+end)
